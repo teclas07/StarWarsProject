@@ -1,0 +1,89 @@
+<!--<form class="example-form" #form="ngForm">
+    <input type="text" name="Name" required placeholder="Name of the ship" 
+        [ngModel]="ships.Name" 
+        (ngModelChange)="setUpperCase($event)" />
+
+    <input type="checkbox"  name="isEmpire" [(ngModel)]="ships.isEmpire" />
+
+    
+    <br/>
+    <hr /> 
+        Option 1<input type="radio" name="Trilogy" [(ngModel)]="ships.Trilogy" value="1" /><br/> 
+        Option 2<input type="radio" name="Trilogy" [(ngModel)]="ships.Trilogy" value="2" /><br/> 
+        Option 3<input type="radio" name="Trilogy" [(ngModel)]="ships.Trilogy" value="3" /><br/>
+
+    <br/>
+    <hr />
+
+    <select name="Trilogy" ngModel>
+        <option *ngFor="let t of Trilogy">{{t}}</option>
+    </select>
+
+
+    <button type="submit" value="teste">submit</button>
+
+</form>
+
+<p>
+    Model form: {{ ships | json }}
+</p>
+<p>
+    Angular form: {{ form.value | json }}
+</p>-->
+
+
+<form class="example-form" #form="ngForm">
+
+    <p>
+        Model: {{ ship | json }}
+        <br />
+        Angular form: {{ form.value | json }}
+
+    </p>
+
+    <md-input-container class="example-full-width">
+        <input md-input placeholder="Name" name="Name" [(ngModel)]="ship.Name">
+    </md-input-container>
+
+    <p>
+        <md-input-container class="example-full-width">
+            <input md-input placeholder="Description" name="Description" [(ngModel)]="ship.Description">
+        </md-input-container>
+    </p>
+
+    <p>
+        <br /><br />
+        <md-checkbox name="isEmpire" [(ngModel)]="ship.isEmpire">is Empire ship?</md-checkbox>
+    </p>
+
+
+    <p>
+        <br /><br />
+        <md-radio-group name="Trilogy" [(ngModel)]="ship.Trilogy">
+            <md-radio-button value="1">Original trilogy</md-radio-button>
+            <md-radio-button value="2">Prequel trilogy</md-radio-button>
+            <md-radio-button value="3">Sequel trilogy</md-radio-button>
+            <md-radio-button value="4">Anthology films</md-radio-button>
+        </md-radio-group>
+    </p>
+
+    <p>
+        <br /><br />
+        <md-select placeholder="Movie" class="select100" name="Movie" [(ngModel)]="ship.Movie">
+            <md-option value="Episode IV - A New Hope">Episode IV - A New Hope</md-option>
+            <md-option value="Episode V - The Empire Strikes Back">Episode V - The Empire Strikes Back</md-option>
+            <md-option value="Episode VI - Return of the Jedi">Episode VI - Return of the Jedi</md-option>
+            <md-option value="Episode I - The Phantom Menace">Episode I - The Phantom Menace</md-option>
+            <md-option value="Episode II - Attack of the Clones">Episode II - Attack of the Clones</md-option>
+            <md-option value="Episode III - Revenge of the Sith">Episode III - Revenge of the Sith</md-option>
+            <md-option value="Episode VII - The Force Awakens">Episode VII - The Force Awakens</md-option>
+            <md-option value="Episode VIII - The Last Jedi and Episode IX">Episode VIII - The Last Jedi and Episode IX</md-option>
+            <md-option value="Rogue One">Rogue One</md-option>
+        </md-select>
+    </p>
+
+    <p>
+        <img [src]="ship.Foto" class="imgWidth">
+    </p>
+
+</form>
